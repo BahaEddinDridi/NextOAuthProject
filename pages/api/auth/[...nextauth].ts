@@ -1,4 +1,4 @@
-import NextAuth, {Session} from "next-auth";
+import NextAuth, { Session } from "next-auth";
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -25,7 +25,6 @@ export const authOptions: NextAuthOptions = {
         },
         async session({ session, token }) {
             const customSession = session as CustomSession;
-            // @ts-ignore
             customSession.accessToken = token.accessToken;
             return customSession;
         },
