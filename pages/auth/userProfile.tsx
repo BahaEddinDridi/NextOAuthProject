@@ -3,8 +3,19 @@ import { useRouter } from "next/router";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 
+interface UserInfo {
+    firstName: string;
+    lastName: string;
+    email: string;
+    image: string;
+    birthdate: string;
+    address: string;
+    phone: string;
+}
+
+
 const UserProfile = () => {
-    const [userInfo, setUserInfo] = useState(null);
+    const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
     const router = useRouter();
 
     useEffect(() => {
