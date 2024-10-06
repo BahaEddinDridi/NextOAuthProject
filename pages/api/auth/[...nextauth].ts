@@ -1,7 +1,7 @@
 import NextAuth, { Session } from "next-auth";
-import { NextAuthOptions, JWT } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-
+import { JWT } from "next-auth/jwt";
 // Extend the Session type to include accessToken
 interface CustomSession extends Session {
     accessToken?: string; // Optional: Mark as optional
